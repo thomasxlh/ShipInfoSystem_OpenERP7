@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data noupdate="1">
+        <record id="seq_ship_auto_type" model="ir.sequence.type">
+            <field name="name">Ship</field>
+            <field name="code">ship.shipid</field>
+        </record>
+        <record id="seq_ship_auto" model="ir.sequence">
+            <field name="name">Ship</field>
+            <field name="code">ship.shipid</field>
+            <field eval="5" name="padding"/>
+            <field eval="10000" name="number_next_actual"/>  <!--貌似没用，要手动-->
+        </record>
+    </data>
+</openerp>

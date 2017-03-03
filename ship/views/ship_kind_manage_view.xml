@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="ship_category_form_view" model="ir.ui.view">
+            <field name="name">ship.category.form</field>
+            <field name="type">form</field>
+            <field name="model">ship.kind</field>
+            <field name="arch" type="xml">
+                <form string="Ship Categories"  version="7.0" > 
+                	<group>
+                    <field name="complete_name" string = "complete name"/>
+                    <field name="name"/>
+                    <field name="sequence"/>
+                    <field name="parent_id"/>
+                	</group>
+		              <p>
+		                order by sequence and name, if sequence is 0, the record would not appear in create ship info form.
+		              </p>
+                </form>
+            </field>
+        </record>
+        <record id="ship_category_tree_view" model="ir.ui.view">
+            <field name="name">ship.category.tree</field>
+            <field name="type">tree</field>
+            <field name="model">ship.kind</field>
+            <field name="arch" type="xml">
+                <tree string="Product Categories">
+                    <field name="complete_name" string = "complete name"/>
+                    <field name="name"/>
+                    <field name="sequence"/>
+                    <field name="parent_id"/>
+                </tree>
+            </field>
+        </record>
+        
+        
+        <record id="ship_category_action" model="ir.actions.act_window">
+            <field name="name">Ships by Category</field>
+            <field name="res_model">ship.kind</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem
+            action="ship_category_action" id="menu_ships_category" parent="base.menu_base_config" sequence="11" groups="base.group_system"/>
+            
+            
+    </data>
+</openerp>
+
+
+									

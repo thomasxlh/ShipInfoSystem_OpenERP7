@@ -1,0 +1,1735 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    	
+
+<!-- for ship kind require-->
+        <record id="action_dry_bulk_carrier_require_view1" model="ir.actions.act_window.view">
+            <field eval="10" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="ship_info_tree_view"/>
+            <field name="act_window_id" ref="action_dry_bulk_carrier_require"/>
+        </record>
+        <record id="action_dry_bulk_carrier_require_view2" model="ir.actions.act_window.view">
+            <field eval="20" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="ship_require_from_view"/>
+            <field name="act_window_id" ref="action_dry_bulk_carrier_require"/>
+        </record>
+        
+		        <record id="action_bulk_carrier_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_bulk_carrier_require"/>
+		        </record>
+		        <record id="action_bulk_carrier_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_bulk_carrier_require"/>
+		        </record>
+
+		        <record id="action_general_cargo_ship_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_general_cargo_ship_require"/>
+		        </record>
+		        <record id="action_general_cargo_ship_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_general_cargo_ship_require"/>
+		        </record>
+
+		        <record id="action_container_ship_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_container_ship_require"/>
+		        </record>
+		        <record id="action_container_ship_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_container_ship_require"/>
+		        </record>
+
+		        <record id="action_multipurpose_vessel_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_multipurpose_vessel_require"/>
+		        </record>
+		        <record id="action_multipurpose_vessel_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_multipurpose_vessel_require"/>
+		        </record>
+
+		        <record id="action_refrigerator_ship_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_refrigerator_ship_require"/>
+		        </record>
+		        <record id="action_refrigerator_ship_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_refrigerator_ship_require"/>
+		        </record>
+		        
+		        <record id="action_ro-ro_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_ro-ro_require"/>
+		        </record>
+		        <record id="action_ro-ro_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_ro-ro_require"/>
+		        </record>
+        
+		        <record id="action_cement_carrier_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_cement_carrier_require"/>
+		        </record>
+		        <record id="action_cement_carrier_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_cement_carrier_require"/>
+		        </record>
+        
+		        <record id="action_timber_carrier_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_timber_carrier_require"/>
+		        </record>
+		        <record id="action_timber_carrier_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_timber_carrier_require"/>
+		        </record>
+        
+		        <record id="action_bulk_cement_boat_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_bulk_cement_boat_require"/>
+		        </record>
+		        <record id="action_bulk_cement_boat_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_bulk_cement_boat_require"/>
+		        </record>
+        
+        <record id="action_tankship_require_view1" model="ir.actions.act_window.view">
+            <field eval="10" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="ship_info_tree_view"/>
+            <field name="act_window_id" ref="action_tankship_require"/>
+        </record>
+        <record id="action_tankship_require_view2" model="ir.actions.act_window.view">
+            <field eval="20" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="ship_require_from_view"/>
+            <field name="act_window_id" ref="action_tankship_require"/>
+        </record>
+        
+		        <record id="action_product_tanker_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_product_tanker_require"/>
+		        </record>
+		        <record id="action_product_tanker_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_product_tanker_require"/>
+		        </record>
+        
+		        <record id="action_crude_oil_tanker_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_crude_oil_tanker_require"/>
+		        </record>
+		        <record id="action_crude_oil_tanker_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_crude_oil_tanker_require"/>
+		        </record>
+        
+		        <record id="action_asphalt_boat_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_asphalt_boat_require"/>
+		        </record>
+		        <record id="action_asphalt_boat_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_asphalt_boat_require"/>
+		        </record>
+        
+		        <record id="action_chemical_tanker_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_chemical_tanker_require"/>
+		        </record>
+		        <record id="action_chemical_tanker_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_chemical_tanker_require"/>
+		        </record>
+        
+		        <record id="action_LNG_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_LNG_require"/>
+		        </record>
+		        <record id="action_LNG_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_LNG_require"/>
+		        </record>
+        
+		        <record id="action_LPG_ship_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_LPG_ship_require"/>
+		        </record>
+		        <record id="action_LPG_ship_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_LPG_ship_require"/>
+		        </record>
+        
+		        <record id="action_ship_oil_spill_emergency_response_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_ship_oil_spill_emergency_response_require"/>
+		        </record>
+		        <record id="action_ship_oil_spill_emergency_response_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_ship_oil_spill_emergency_response_require"/>
+		        </record>
+        
+		        <record id="action_water_tanker_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_water_tanker_require"/>
+		        </record>
+		        <record id="action_water_tanker_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_water_tanker_require"/>
+		        </record>
+        
+		        <record id="action_refueling_ship_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_refueling_ship_require"/>
+		        </record>
+		        <record id="action_refueling_ship_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_refueling_ship_require"/>
+		        </record>
+        
+		        <record id="action_oil_barge_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_oil_barge_require"/>
+		        </record>
+		        <record id="action_oil_barge_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_oil_barge_require"/>
+		        </record>
+        
+		        <record id="action_floating_storage_vessel_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_floating_storage_vessel_require"/>
+		        </record>
+		        <record id="action_floating_storage_vessel_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_floating_storage_vessel_require"/>
+		        </record>
+        
+		        <record id="action_light_tankers_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_light_tankers_require"/>
+		        </record>
+		        <record id="action_light_tankers_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_light_tankers_require"/>
+		        </record>
+        
+        
+        <record id="action_tugboat_require_view1" model="ir.actions.act_window.view">
+            <field eval="10" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="ship_info_tree_view"/>
+            <field name="act_window_id" ref="action_tugboat_require"/>
+        </record>
+        <record id="action_tugboat_require_view2" model="ir.actions.act_window.view">
+            <field eval="20" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="ship_require_from_view"/>
+            <field name="act_window_id" ref="action_tugboat_require"/>
+        </record>
+        
+		        <record id="action_tugboat_ZP_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_tugboat_ZP_require"/>
+		        </record>
+		        <record id="action_tugboat_ZP_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_tugboat_ZP_require"/>
+		        </record>
+        
+		        <record id="action_ocean_Tug_CPP_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_ocean_Tug_CPP_require"/>
+		        </record>
+		        <record id="action_ocean_Tug_CPP_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_ocean_Tug_CPP_require"/>
+		        </record>
+        
+		        <record id="action_ocean_tug_FPP_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_ocean_tug_FPP_require"/>
+		        </record>
+		        <record id="action_ocean_tug_FPP_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_ocean_tug_FPP_require"/>
+		        </record>
+        
+		        <record id="action_with_three_tugs_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_with_three_tugs_require"/>
+		        </record>
+		        <record id="action_with_three_tugs_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_with_three_tugs_require"/>
+		        </record>
+        
+		        <record id="action_push_tug_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_push_tug_require"/>
+		        </record>
+		        <record id="action_push_tug_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_push_tug_require"/>
+		        </record>
+        
+		        <record id="action_platform_supply_vessel_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_platform_supply_vessel_require"/>
+		        </record>
+		        <record id="action_platform_supply_vessel_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_platform_supply_vessel_require"/>
+		        </record>
+        
+        <record id="action_dredger_require_view1" model="ir.actions.act_window.view">
+            <field eval="10" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="ship_info_tree_view"/>
+            <field name="act_window_id" ref="action_dredger_require"/>
+        </record>
+        <record id="action_dredger_require_view2" model="ir.actions.act_window.view">
+            <field eval="20" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="ship_require_from_view"/>
+            <field name="act_window_id" ref="action_dredger_require"/>
+        </record>
+        
+		        <record id="action_grab_dredger_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_grab_dredger_require"/>
+		        </record>
+		        <record id="action_grab_dredger_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_grab_dredger_require"/>
+		        </record>
+        
+		        <record id="action_cutter_suction_dredger_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_cutter_suction_dredger_require"/>
+		        </record>
+		        <record id="action_cutter_suction_dredger_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_cutter_suction_dredger_require"/>
+		        </record>
+        
+		        <record id="action_trailing_suction_hopper_dredger_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_trailing_suction_hopper_dredger_require"/>
+		        </record>
+		        <record id="action_trailing_suction_hopper_dredger_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_trailing_suction_hopper_dredger_require"/>
+		        </record>
+        
+		        <record id="action_chain_bucket_dredger_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_chain_bucket_dredger_require"/>
+		        </record>
+		        <record id="action_chain_bucket_dredger_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_chain_bucket_dredger_require"/>
+		        </record>
+        
+		        <record id="action_bucket_dredger_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_bucket_dredger_require"/>
+		        </record>
+		        <record id="action_bucket_dredger_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_bucket_dredger_require"/>
+		        </record>
+        
+        <record id="action_barge_require_view1" model="ir.actions.act_window.view">
+            <field eval="10" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="ship_info_tree_view"/>
+            <field name="act_window_id" ref="action_barge_require"/>
+        </record>
+        <record id="action_barge_require_view2" model="ir.actions.act_window.view">
+            <field eval="20" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="ship_require_from_view"/>
+            <field name="act_window_id" ref="action_barge_require"/>
+        </record>
+        
+		        <record id="action_deck_barge_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_deck_barge_require"/>
+		        </record>
+		        <record id="action_deck_barge_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_deck_barge_require"/>
+		        </record>
+        
+		        <record id="action_split_hopper_barge_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_split_hopper_barge_require"/>
+		        </record>
+		        <record id="action_split_hopper_barge_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_split_hopper_barge_require"/>
+		        </record>
+        
+		        <record id="action_open_sediment_barge_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_open_sediment_barge_require"/>
+		        </record>
+		        <record id="action_open_sediment_barge_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_open_sediment_barge_require"/>
+		        </record>
+        
+		        <record id="action_living_barge_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_living_barge_require"/>
+		        </record>
+		        <record id="action_living_barge_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_living_barge_require"/>
+		        </record>
+        
+		        <record id="action_landing_craft_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_landing_craft_require"/>
+		        </record>
+		        <record id="action_landing_craft_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_landing_craft_require"/>
+		        </record>
+        
+		        <record id="action_crane_barge_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_crane_barge_require"/>
+		        </record>
+		        <record id="action_crane_barge_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_crane_barge_require"/>
+		        </record>
+        
+        <record id="action_floating_crane_require_view1" model="ir.actions.act_window.view">
+            <field eval="10" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="ship_info_tree_view"/>
+            <field name="act_window_id" ref="action_floating_crane_require"/>
+        </record>
+        <record id="action_floating_crane_require_view2" model="ir.actions.act_window.view">
+            <field eval="20" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="ship_require_from_view"/>
+            <field name="act_window_id" ref="action_floating_crane_require"/>
+        </record>
+    
+		        <record id="action_full_swing_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_full_swing_require"/>
+		        </record>
+		        <record id="action_full_swing_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_full_swing_require"/>
+		        </record>
+        
+		        <record id="action_A_shape_hanging_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_A_shape_hanging_require"/>
+		        </record>
+		        <record id="action_A_shape_hanging_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_A_shape_hanging_require"/>
+		        </record>
+        
+		        <record id="action_eagle_hanging_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_eagle_hanging_require"/>
+		        </record>
+		        <record id="action_eagle_hanging_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_eagle_hanging_require"/>
+		        </record>
+        
+        <record id="action_ocean_platform_require_view1" model="ir.actions.act_window.view">
+            <field eval="10" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="ship_info_tree_view"/>
+            <field name="act_window_id" ref="action_ocean_platform_require"/>
+        </record>
+        <record id="action_ocean_platform_require_view2" model="ir.actions.act_window.view">
+            <field eval="20" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="ship_require_from_view"/>
+            <field name="act_window_id" ref="action_ocean_platform_require"/>
+        </record>
+        
+		        <record id="action_self-elevating_platform_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_self-elevating_platform_require"/>
+		        </record>
+		        <record id="action_self-elevating_platform_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_self-elevating_platform_require"/>
+		        </record>
+        
+        <record id="action_passenger_ship_require_view1" model="ir.actions.act_window.view">
+            <field eval="10" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="ship_info_tree_view"/>
+            <field name="act_window_id" ref="action_passenger_ship_require"/>
+        </record>
+        <record id="action_passenger_ship_require_view2" model="ir.actions.act_window.view">
+            <field eval="20" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="ship_require_from_view"/>
+            <field name="act_window_id" ref="action_passenger_ship_require"/>
+        </record>
+        
+		        <record id="action_traveler_boat_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_traveler_boat_require"/>
+		        </record>
+		        <record id="action_traveler_boat_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_traveler_boat_require"/>
+		        </record>
+        
+		        <record id="action_catamaran_passenger_ship_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_catamaran_passenger_ship_require"/>
+		        </record>
+		        <record id="action_catamaran_passenger_ship_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_catamaran_passenger_ship_require"/>
+		        </record>
+        
+		        <record id="action_car_and_passenger_ferry_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_car_and_passenger_ferry_require"/>
+		        </record>
+		        <record id="action_car_and_passenger_ferry_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_car_and_passenger_ferry_require"/>
+		        </record>
+        
+        <record id="action_vessel_disposed_of_by_crapping_require_view1" model="ir.actions.act_window.view">
+            <field eval="10" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="ship_info_tree_view"/>
+            <field name="act_window_id" ref="action_vessel_disposed_of_by_crapping_require"/>
+        </record>
+        <record id="action_vessel_disposed_of_by_crapping_require_view2" model="ir.actions.act_window.view">
+            <field eval="20" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="ship_require_from_view"/>
+            <field name="act_window_id" ref="action_vessel_disposed_of_by_crapping_require"/>
+        </record>
+        
+        <record id="action_yacht_require_view1" model="ir.actions.act_window.view">
+            <field eval="10" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="ship_info_tree_view"/>
+            <field name="act_window_id" ref="action_yacht_require"/>
+        </record>
+        <record id="action_yacht_require_view2" model="ir.actions.act_window.view">
+            <field eval="20" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="ship_require_from_view"/>
+            <field name="act_window_id" ref="action_yacht_require"/>
+        </record>
+        
+        <record id="action_other_kind_ship_require_view1" model="ir.actions.act_window.view">
+            <field eval="10" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="ship_info_tree_view"/>
+            <field name="act_window_id" ref="action_other_kind_ship_require"/>
+        </record>
+        <record id="action_other_kind_ship_require_view2" model="ir.actions.act_window.view">
+            <field eval="20" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="ship_require_from_view"/>
+            <field name="act_window_id" ref="action_other_kind_ship_require"/>
+        </record>
+        
+		        <record id="action_fishing_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_fishing_require"/>
+		        </record>
+		        <record id="action_fishing_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_fishing_require"/>
+		        </record>
+        
+		        <record id="action_sand_suction_boat_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_sand_suction_boat_require"/>
+		        </record>
+		        <record id="action_sand_suction_boat_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_sand_suction_boat_require"/>
+		        </record>
+        
+		        <record id="action_fishing_boat_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_fishing_boat_require"/>
+		        </record>
+		        <record id="action_fishing_boat_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_fishing_boat_require"/>
+		        </record>
+        
+		        <record id="action_floating_restaurant_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_floating_restaurant_require"/>
+		        </record>
+		        <record id="action_floating_restaurant_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_floating_restaurant_require"/>
+		        </record>
+        
+		        <record id="action_anchor_boat_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_anchor_boat_require"/>
+		        </record>
+		        <record id="action_anchor_boat_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_anchor_boat_require"/>
+		        </record>
+        
+		        <record id="action_boat_transport_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_boat_transport_require"/>
+		        </record>
+		        <record id="action_boat_transport_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_boat_transport_require"/>
+		        </record>
+        
+		        <record id="action_advertise_boat_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_advertise_boat_require"/>
+		        </record>
+		        <record id="action_advertise_boat_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_advertise_boat_require"/>
+		        </record>
+        
+		        <record id="action_floating_dock_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_floating_dock_require"/>
+		        </record>
+		        <record id="action_floating_dock_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_floating_dock_require"/>
+		        </record>
+        
+		        <record id="action_tracking_ship_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_tracking_ship_require"/>
+		        </record>
+		        <record id="action_tracking_ship_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_tracking_ship_require"/>
+		        </record>
+        
+		        <record id="action_boat_ramming_require_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_boat_ramming_require"/>
+		        </record>
+		        <record id="action_boat_ramming_require_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_require_from_view"/>
+		            <field name="act_window_id" ref="action_boat_ramming_require"/>
+		        </record>
+		        
+		        
+		        
+		        
+		        
+<!-- for ship kind sell-->
+        <record id="action_dry_bulk_carrier_view1" model="ir.actions.act_window.view">
+            <field eval="10" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="ship_info_tree_view"/>
+            <field name="act_window_id" ref="action_dry_bulk_carrier"/>
+        </record>
+        <record id="action_dry_bulk_carrier_view2" model="ir.actions.act_window.view">
+            <field eval="20" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="ship_info_from_view"/>
+            <field name="act_window_id" ref="action_dry_bulk_carrier"/>
+        </record>
+        
+		        <record id="action_bulk_carrier_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_bulk_carrier"/>
+		        </record>
+		        <record id="action_bulk_carrier_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_bulk_carrier"/>
+		        </record>
+		        <record id="action_general_cargo_ship_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_general_cargo_ship"/>
+		        </record>
+		        <record id="action_general_cargo_ship_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_general_cargo_ship"/>
+		        </record>
+
+		        <record id="action_container_ship_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_container_ship"/>
+		        </record>
+		        <record id="action_container_ship_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_container_ship"/>
+		        </record>
+
+		        <record id="action_multipurpose_vessel_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_multipurpose_vessel"/>
+		        </record>
+		        <record id="action_multipurpose_vessel_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_multipurpose_vessel"/>
+		        </record>
+
+		        <record id="action_refrigerator_ship_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_refrigerator_ship"/>
+		        </record>
+		        <record id="action_refrigerator_ship_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_refrigerator_ship"/>
+		        </record>
+		        
+		        <record id="action_ro-ro_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_ro-ro"/>
+		        </record>
+		        <record id="action_ro-ro_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_ro-ro"/>
+		        </record>
+        
+		        <record id="action_cement_carrier_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_cement_carrier"/>
+		        </record>
+		        <record id="action_cement_carrier_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_cement_carrier"/>
+		        </record>
+        
+		        <record id="action_timber_carrier_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_timber_carrier"/>
+		        </record>
+		        <record id="action_timber_carrier_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_timber_carrier"/>
+		        </record>
+        
+		        <record id="action_bulk_cement_boat_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_bulk_cement_boat"/>
+		        </record>
+		        <record id="action_bulk_cement_boat_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_bulk_cement_boat"/>
+		        </record>
+        
+        <record id="action_tankship_view1" model="ir.actions.act_window.view">
+            <field eval="10" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="ship_info_tree_view"/>
+            <field name="act_window_id" ref="action_tankship"/>
+        </record>
+        <record id="action_tankship_view2" model="ir.actions.act_window.view">
+            <field eval="20" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="ship_info_from_view"/>
+            <field name="act_window_id" ref="action_tankship"/>
+        </record>
+        
+		        <record id="action_product_tanker_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_product_tanker"/>
+		        </record>
+		        <record id="action_product_tanker_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_product_tanker"/>
+		        </record>
+        
+		        <record id="action_crude_oil_tanker_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_crude_oil_tanker"/>
+		        </record>
+		        <record id="action_crude_oil_tanker_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_crude_oil_tanker"/>
+		        </record>
+        
+		        <record id="action_asphalt_boat_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_asphalt_boat"/>
+		        </record>
+		        <record id="action_asphalt_boat_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_asphalt_boat"/>
+		        </record>
+        
+		        <record id="action_chemical_tanker_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_chemical_tanker"/>
+		        </record>
+		        <record id="action_chemical_tanker_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_chemical_tanker"/>
+		        </record>
+        
+		        <record id="action_LNG_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_LNG"/>
+		        </record>
+		        <record id="action_LNG_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_LNG"/>
+		        </record>
+        
+		        <record id="action_LPG_ship_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_LPG_ship"/>
+		        </record>
+		        <record id="action_LPG_ship_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_LPG_ship"/>
+		        </record>
+        
+		        <record id="action_ship_oil_spill_emergency_response_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_ship_oil_spill_emergency_response"/>
+		        </record>
+		        <record id="action_ship_oil_spill_emergency_response_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_ship_oil_spill_emergency_response"/>
+		        </record>
+        
+		        <record id="action_water_tanker_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_water_tanker"/>
+		        </record>
+		        <record id="action_water_tanker_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_water_tanker"/>
+		        </record>
+        
+		        <record id="action_refueling_ship_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_refueling_ship"/>
+		        </record>
+		        <record id="action_refueling_ship_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_refueling_ship"/>
+		        </record>
+        
+		        <record id="action_oil_barge_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_oil_barge"/>
+		        </record>
+		        <record id="action_oil_barge_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_oil_barge"/>
+		        </record>
+        
+		        <record id="action_floating_storage_vessel_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_floating_storage_vessel"/>
+		        </record>
+		        <record id="action_floating_storage_vessel_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_floating_storage_vessel"/>
+		        </record>
+        
+		        <record id="action_light_tankers_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_light_tankers"/>
+		        </record>
+		        <record id="action_light_tankers_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_light_tankers"/>
+		        </record>
+        
+        
+        <record id="action_tugboat_view1" model="ir.actions.act_window.view">
+            <field eval="10" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="ship_info_tree_view"/>
+            <field name="act_window_id" ref="action_tugboat"/>
+        </record>
+        <record id="action_tugboat_view2" model="ir.actions.act_window.view">
+            <field eval="20" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="ship_info_from_view"/>
+            <field name="act_window_id" ref="action_tugboat"/>
+        </record>
+        
+		        <record id="action_tugboat_ZP_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_tugboat_ZP"/>
+		        </record>
+		        <record id="action_tugboat_ZP_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_tugboat_ZP"/>
+		        </record>
+        
+		        <record id="action_ocean_Tug_CPP_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_ocean_Tug_CPP"/>
+		        </record>
+		        <record id="action_ocean_Tug_CPP_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_ocean_Tug_CPP"/>
+		        </record>
+        
+		        <record id="action_ocean_tug_FPP_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_ocean_tug_FPP"/>
+		        </record>
+		        <record id="action_ocean_tug_FPP_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_ocean_tug_FPP"/>
+		        </record>
+        
+		        <record id="action_with_three_tugs_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_with_three_tugs"/>
+		        </record>
+		        <record id="action_with_three_tugs_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_with_three_tugs"/>
+		        </record>
+        
+		        <record id="action_push_tug_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_push_tug"/>
+		        </record>
+		        <record id="action_push_tug_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_push_tug"/>
+		        </record>
+        
+		        <record id="action_platform_supply_vessel_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_platform_supply_vessel"/>
+		        </record>
+		        <record id="action_platform_supply_vessel_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_platform_supply_vessel"/>
+		        </record>
+        
+        <record id="action_dredger_view1" model="ir.actions.act_window.view">
+            <field eval="10" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="ship_info_tree_view"/>
+            <field name="act_window_id" ref="action_dredger"/>
+        </record>
+        <record id="action_dredger_view2" model="ir.actions.act_window.view">
+            <field eval="20" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="ship_info_from_view"/>
+            <field name="act_window_id" ref="action_dredger"/>
+        </record>
+        
+		        <record id="action_grab_dredger_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_grab_dredger"/>
+		        </record>
+		        <record id="action_grab_dredger_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_grab_dredger"/>
+		        </record>
+        
+		        <record id="action_cutter_suction_dredger_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_cutter_suction_dredger"/>
+		        </record>
+		        <record id="action_cutter_suction_dredger_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_cutter_suction_dredger"/>
+		        </record>
+        
+		        <record id="action_trailing_suction_hopper_dredger_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_trailing_suction_hopper_dredger"/>
+		        </record>
+		        <record id="action_trailing_suction_hopper_dredger_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_trailing_suction_hopper_dredger"/>
+		        </record>
+        
+		        <record id="action_chain_bucket_dredger_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_chain_bucket_dredger"/>
+		        </record>
+		        <record id="action_chain_bucket_dredger_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_chain_bucket_dredger"/>
+		        </record>
+        
+		        <record id="action_bucket_dredger_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_bucket_dredger"/>
+		        </record>
+		        <record id="action_bucket_dredger_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_bucket_dredger"/>
+		        </record>
+        
+        <record id="action_barge_view1" model="ir.actions.act_window.view">
+            <field eval="10" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="ship_info_tree_view"/>
+            <field name="act_window_id" ref="action_barge"/>
+        </record>
+        <record id="action_barge_view2" model="ir.actions.act_window.view">
+            <field eval="20" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="ship_info_from_view"/>
+            <field name="act_window_id" ref="action_barge"/>
+        </record>
+        
+		        <record id="action_deck_barge_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_deck_barge"/>
+		        </record>
+		        <record id="action_deck_barge_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_deck_barge"/>
+		        </record>
+        
+		        <record id="action_split_hopper_barge_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_split_hopper_barge"/>
+		        </record>
+		        <record id="action_split_hopper_barge_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_split_hopper_barge"/>
+		        </record>
+        
+		        <record id="action_open_sediment_barge_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_open_sediment_barge"/>
+		        </record>
+		        <record id="action_open_sediment_barge_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_open_sediment_barge"/>
+		        </record>
+        
+		        <record id="action_living_barge_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_living_barge"/>
+		        </record>
+		        <record id="action_living_barge_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_living_barge"/>
+		        </record>
+        
+		        <record id="action_landing_craft_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_landing_craft"/>
+		        </record>
+		        <record id="action_landing_craft_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_landing_craft"/>
+		        </record>
+        
+		        <record id="action_crane_barge_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_crane_barge"/>
+		        </record>
+		        <record id="action_crane_barge_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_crane_barge"/>
+		        </record>
+        
+        <record id="action_floating_crane_view1" model="ir.actions.act_window.view">
+            <field eval="10" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="ship_info_tree_view"/>
+            <field name="act_window_id" ref="action_floating_crane"/>
+        </record>
+        <record id="action_floating_crane_view2" model="ir.actions.act_window.view">
+            <field eval="20" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="ship_info_from_view"/>
+            <field name="act_window_id" ref="action_floating_crane"/>
+        </record>
+    
+		        <record id="action_full_swing_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_full_swing"/>
+		        </record>
+		        <record id="action_full_swing_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_full_swing"/>
+		        </record>
+        
+		        <record id="action_A_shape_hanging_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_A_shape_hanging"/>
+		        </record>
+		        <record id="action_A_shape_hanging_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_A_shape_hanging"/>
+		        </record>
+        
+		        <record id="action_eagle_hanging_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_eagle_hanging"/>
+		        </record>
+		        <record id="action_eagle_hanging_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_eagle_hanging"/>
+		        </record>
+        
+        <record id="action_ocean_platform_view1" model="ir.actions.act_window.view">
+            <field eval="10" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="ship_info_tree_view"/>
+            <field name="act_window_id" ref="action_ocean_platform"/>
+        </record>
+        <record id="action_ocean_platform_view2" model="ir.actions.act_window.view">
+            <field eval="20" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="ship_info_from_view"/>
+            <field name="act_window_id" ref="action_ocean_platform"/>
+        </record>
+        
+		        <record id="action_self-elevating_platform_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_self-elevating_platform"/>
+		        </record>
+		        <record id="action_self-elevating_platform_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_self-elevating_platform"/>
+		        </record>
+        
+        <record id="action_passenger_ship_view1" model="ir.actions.act_window.view">
+            <field eval="10" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="ship_info_tree_view"/>
+            <field name="act_window_id" ref="action_passenger_ship"/>
+        </record>
+        <record id="action_passenger_ship_view2" model="ir.actions.act_window.view">
+            <field eval="20" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="ship_info_from_view"/>
+            <field name="act_window_id" ref="action_passenger_ship"/>
+        </record>
+        
+		        <record id="action_traveler_boat_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_traveler_boat"/>
+		        </record>
+		        <record id="action_traveler_boat_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_traveler_boat"/>
+		        </record>
+        
+		        <record id="action_catamaran_passenger_ship_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_catamaran_passenger_ship"/>
+		        </record>
+		        <record id="action_catamaran_passenger_ship_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_catamaran_passenger_ship"/>
+		        </record>
+        
+		        <record id="action_car_and_passenger_ferry_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_car_and_passenger_ferry"/>
+		        </record>
+		        <record id="action_car_and_passenger_ferry_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_car_and_passenger_ferry"/>
+		        </record>
+        
+        <record id="action_vessel_disposed_of_by_crapping_view1" model="ir.actions.act_window.view">
+            <field eval="10" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="ship_info_tree_view"/>
+            <field name="act_window_id" ref="action_vessel_disposed_of_by_crapping"/>
+        </record>
+        <record id="action_vessel_disposed_of_by_crapping_view2" model="ir.actions.act_window.view">
+            <field eval="20" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="ship_info_from_view"/>
+            <field name="act_window_id" ref="action_vessel_disposed_of_by_crapping"/>
+        </record>
+        
+        <record id="action_yacht_view1" model="ir.actions.act_window.view">
+            <field eval="10" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="ship_info_tree_view"/>
+            <field name="act_window_id" ref="action_yacht"/>
+        </record>
+        <record id="action_yacht_view2" model="ir.actions.act_window.view">
+            <field eval="20" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="ship_info_from_view"/>
+            <field name="act_window_id" ref="action_yacht"/>
+        </record>
+        
+        <record id="action_other_kind_ship_view1" model="ir.actions.act_window.view">
+            <field eval="10" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="ship_info_tree_view"/>
+            <field name="act_window_id" ref="action_other_kind_ship"/>
+        </record>
+        <record id="action_other_kind_ship_view2" model="ir.actions.act_window.view">
+            <field eval="20" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="ship_info_from_view"/>
+            <field name="act_window_id" ref="action_other_kind_ship"/>
+        </record>
+        
+		        <record id="action_fishing_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_fishing"/>
+		        </record>
+		        <record id="action_fishing_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_fishing"/>
+		        </record>
+        
+		        <record id="action_sand_suction_boat_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_sand_suction_boat"/>
+		        </record>
+		        <record id="action_sand_suction_boat_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_sand_suction_boat"/>
+		        </record>
+        
+		        <record id="action_fishing_boat_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_fishing_boat"/>
+		        </record>
+		        <record id="action_fishing_boat_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_fishing_boat"/>
+		        </record>
+        
+		        <record id="action_floating_restaurant_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_floating_restaurant"/>
+		        </record>
+		        <record id="action_floating_restaurant_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_floating_restaurant"/>
+		        </record>
+        
+		        <record id="action_anchor_boat_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_anchor_boat"/>
+		        </record>
+		        <record id="action_anchor_boat_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_anchor_boat"/>
+		        </record>
+        
+		        <record id="action_boat_transport_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_boat_transport"/>
+		        </record>
+		        <record id="action_boat_transport_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_boat_transport"/>
+		        </record>
+        
+		        <record id="action_advertise_boat_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_advertise_boat"/>
+		        </record>
+		        <record id="action_advertise_boat_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_advertise_boat"/>
+		        </record>
+        
+		        <record id="action_floating_dock_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_floating_dock"/>
+		        </record>
+		        <record id="action_floating_dock_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_floating_dock"/>
+		        </record>
+        
+		        <record id="action_tracking_ship_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_tracking_ship"/>
+		        </record>
+		        <record id="action_tracking_ship_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_tracking_ship"/>
+		        </record>
+        
+		        <record id="action_boat_ramming_view1" model="ir.actions.act_window.view">
+		            <field eval="10" name="sequence"/>
+		            <field name="view_mode">tree</field>
+		            <field name="view_id" ref="ship_info_tree_view"/>
+		            <field name="act_window_id" ref="action_boat_ramming"/>
+		        </record>
+		        <record id="action_boat_ramming_view2" model="ir.actions.act_window.view">
+		            <field eval="20" name="sequence"/>
+		            <field name="view_mode">form</field>
+		            <field name="view_id" ref="ship_info_from_view"/>
+		            <field name="act_window_id" ref="action_boat_ramming"/>
+		        </record>
+                
+		        
+		        
+		        
+		        
+    </data>
+</openerp>
+

@@ -1,0 +1,412 @@
+
+# ------ 已加入模块
+
+1, copy the folder to 
+\OpenERP 7.0-20131121-002445\Server\server\openerp\addons
+
+# ----copy res_users to \base\res
+
+2, install the module， # ----在模块中加入数据库ship.info & ship.kind的读取权限；changing permissions to ir.export.linea and ir.export for a group of users（暂时性更改）.
+
+# ----3, 设置->技术->安全设定->记录规则
+		Access Own Partners
+		['|','|','|',('user_id','=',user.id),'&',('user_id','=',False),('parent_id.user_id','=',user.id),'&','&',('user_id','=',False),('parent_id.user_id','=',False),('name','=',user.name),'&','&',('user_id','=',False),('parent_id','=',False),('name','=',user.name)]
+		业务伙伴, 销售 / 看自己的线索
+		
+		Access All Partners
+		[(1, '=', 1)]
+		业务伙伴, 销售 / 经理
+		
+		Access others ships
+		[('staff','<>',user.id)]
+		ship.info ， read
+		
+		Access own ships
+		[('staff','=',user.id)]
+		ship.info ， all
+		
+
+# ----4，新增菜单 船舶查询-(船舶出售，船舶求购)， 船舶管理（出售管理，求购管理）
+# ----		过滤条件值 [('sale_kind','=','求购')] 以及 [('sale_kind','=','出售'),('staff','=',uid)]   
+# ----		上下文值{'sale_kind':'sell'} 用于设置默认值
+
+
+# ----5, ship.info manage tree	树形列表	ship.info		
+# ----	 ship.info tree	树形列表	ship.info		
+# ----	 ship.info.form	表单	ship.info		
+# ----	 ship.info.manage.form	表单	ship.info		
+# ----	 ship.require.form	表单	ship.info		
+# ----	 ship.require.manage.form		表单	ship.info		
+# ----	 代码见底部
+	 
+
+
+     
+#也可以这样：
+#def _name_get(self, cr, uid, ids, field_name, arg, context):
+#        res = {}
+#        for rec in self.browse(cr, uid, ids, context=context):
+#            res[rec.id] = rec.specification
+#        return res
+#
+#    _columns = {
+#        'specification': fields.char('wjzpw.guiGe', size=64, required=True),
+#        'description': fields.text('Description'),
+#        'name': fields.function(_name_get, string="wjzpw.inventory.yuanLiaoGuiGe", type='char',
+#                                method=True)
+#   }     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ship.info manage tree：
+<?xml version="1.0"?>
+<tree string="Ships manage">
+                    <field name="ship_kind"/>
+                    <field name="ship_id"/>
+                    <field name="load_ton"/>
+                    <field name="feature"/>
+                    <field name="long"/>
+                    <field name="wide"/>
+                    <field name="deep"/>
+                    <field name="absorb"/>
+                    <field name="main_power"/>
+                    <field name="cabin_hold"/>
+                    <field name="hatch_size"/>
+                    <field name="publish_date"/>
+                    <field name="price"/>
+                </tree>
+                
+                
+ship.info tree：
+<?xml version="1.0"?>
+<tree string="All ships" create="false" edit="false" delete="false">   <!-- 取消页面上的几个按钮-->
+                    <field name="ship_kind"/>
+                    <field name="ship_id"/>
+                    <field name="load_ton"/>
+                    <field name="feature"/>
+                    <field name="long"/>
+                    <field name="wide"/>
+                    <field name="deep"/>
+                    <field name="absorb"/>
+                    <field name="main_power"/>
+                    <field name="cabin_hold"/>
+                    <field name="hatch_size"/>
+                    <field name="publish_date"/>
+                    <field name="price"/>
+                </tree>
+            
+            
+            
+            
+ship.info.form：
+<?xml version="1.0"?><form string="Views" version="7.0" create="false" edit="false" delete="false"> 
+<sheet>
+        <group>
+				<field name="ship_id" readonly="1"/>
+	</group>
+		<group>
+        <group>
+				<field name="ship_kind" required="1"/>
+				<field name="cus_kind" required="1"/>
+				<field name="customer" required="1" groups="base.group_sale_manager"/>
+				<field name="ship_name" required="1"/>
+				<field name="imo" required="1"/>
+				<field name="info_from" required="1"/>
+				<field name="feature" required="1"/>
+				<field name="factory" required="1"/>
+				<field name="owner_price" required="1"/>
+				<field name="price" required="1"/>
+				<field name="query_ppl" modifiers="{}"/>
+				<field name="publish_date" required="1"/>
+				<field name="remark"/>
+				</group>
+        <group>
+				<field name="sale_kind" required="1"/>
+				<field name="sale_status" required="1"/>
+				<field name="ship_contact" required="1" groups="base.group_sale_manager"/>
+				<field name="used_name" modifiers="{}"/>
+				<field name="ship_call" modifiers="{}"/>
+				<field name="register_id" modifiers="{}"/>
+				<field name="main_power" required="1"/>
+                                <separator> </separator>
+                                <separator> </separator>
+				<field name="owner_raise_date" modifiers="{}"/>
+				<field name="raise_date" modifiers="{}"/>
+				<field name="indate" modifiers="{'required': true}"/> 
+        </group>
+		</group>
+    <field name="pic1" img_width="280" img_height="200" widget="image" nolabel="1"/>
+    <field name="pic2" img_width="280" img_height="200" widget="image" nolabel="1"/>
+    <field name="pic3" img_width="280" img_height="200" widget="image" nolabel="1"/>
+
+		<group>
+                 <separator> </separator>
+                 <separator> </separator>
+				<field name="staff" modifiers="{}" readonly="1"/>
+		</group>
+		<group>
+        <group>
+				<field name="build_date" modifiers="{}"/>
+				<field name="ship_grade" modifiers="{}"/>
+				<field name="load_ton" required="1"/>
+				<field name="net_ton" required="1"/>
+				<field name="long" required="1"/>
+				<field name="wide" required="1"/>
+				<field name="absorb" modifiers="{}"/>
+				<field name="hatch_num" modifiers="{}"/>
+				<field name="hatch_lid" modifiers="{}"/>
+				<field name="deck" modifiers="{}"/>
+				<field name="hatch_oil" modifiers="{}"/>
+				<field name="yazaicang" modifiers="{}"/>
+				<field name="main_engine" required="1"/>
+				<field name="second_engine" modifiers="{}"/>
+				<field name="dynamo" modifiers="{}"/>
+				<field name="oil_wear" modifiers="{}"/>
+				<field name="speed" required="1"/>
+				<field name="tejian" modifiers="{}"/>
+				</group>
+        <group>
+				<field name="build_country" required="1"/>
+				<field name="flag" modifiers="{}"/>
+				<field name="total_ton" required="1"/>
+				<field name="light_ton" modifiers="{}"/>
+				<field name="droop_space" modifiers="{}"/>
+				<field name="deep" required="1"/>
+				<field name="cabin_hold" required="1"/>
+				<field name="hatch_size" modifiers="{}"/>
+				<field name="deck_bear" modifiers="{}"/>
+				<field name="crane" modifiers="{}"/>
+				<field name="tension" modifiers="{}"/>
+				<field name="hatch_fresh_water" modifiers="{}"/>
+				<field name="thruster" modifiers="{}"/>
+				<field name="oil_kind" modifiers="{}"/>
+				<field name="sail_district" modifiers="{}"/>
+				<field name="wujian" modifiers="{}"/>
+        </group>
+		</group>
+</sheet>
+</form>
+
+
+
+
+ship.info.manage.form：
+<?xml version="1.0"?><form string="Views" version="7.0">
+<sheet>
+        <group>
+				<field name="ship_id" readonly="1"/>
+	</group>
+		<group>
+        <group>
+				<field name="ship_kind" required="1"/>
+				<field name="cus_kind" required="1"/>
+				<field name="customer" required="1"/>
+				<field name="ship_name" required="1"/>
+				<field name="imo" required="1"/>
+				<field name="info_from" required="1"/>
+				<field name="feature" required="1"/>
+				<field name="factory" required="1"/>
+				<field name="owner_price" required="1"/>
+				<field name="price" required="1"/>
+				<field name="query_ppl" modifiers="{}"/>
+				<field name="publish_date" required="1"/>
+				<field name="remark" />
+				</group>
+        <group>
+				<field name="sale_kind" required="1"/>
+				<field name="sale_status" required="1"/>
+				<field name="ship_contact" required="1"/>
+				<field name="used_name" modifiers="{}"/>
+				<field name="ship_call" modifiers="{}"/>
+				<field name="register_id" modifiers="{}"/>
+				<field name="main_power" required="1"/>
+                                <separator> </separator>
+                                <separator > </separator>
+				<field name="owner_raise_date" modifiers="{}"/>
+				<field name="raise_date" modifiers="{}"/>
+				<field name="indate" modifiers="{'required': true}"/> 
+        </group>
+		</group>
+    <field name="pic1" img_width="280" img_height="200" widget="image" nolabel="1"/>
+    <field name="pic2" img_width="280" img_height="200" widget="image" nolabel="1"/>
+    <field name="pic3" img_width="280" img_height="200" widget="image" nolabel="1"/>
+
+		<group>
+                 <separator> </separator>
+                 <separator> </separator>
+				<field name="staff" modifiers="{}" readonly="1"/>
+		</group>
+		<group>
+        <group>
+				<field name="build_date" modifiers="{}"/>
+				<field name="ship_grade" modifiers="{}"/>
+				<field name="load_ton" required="1"/>
+				<field name="net_ton" required="1"/>
+				<field name="long" required="1"/>
+				<field name="wide" required="1"/>
+				<field name="absorb" modifiers="{}"/>
+				<field name="hatch_num" modifiers="{}"/>
+				<field name="hatch_lid" modifiers="{}"/>
+				<field name="deck" modifiers="{}"/>
+				<field name="hatch_oil" modifiers="{}"/>
+				<field name="yazaicang" modifiers="{}"/>
+				<field name="main_engine" required="1"/>
+				<field name="second_engine" modifiers="{}"/>
+				<field name="dynamo" modifiers="{}"/>
+				<field name="oil_wear" modifiers="{}"/>
+				<field name="speed" required="1"/>
+				<field name="tejian" modifiers="{}"/>
+				</group>
+        <group>
+				<field name="build_country" required="1"/>
+				<field name="flag" modifiers="{}"/>
+				<field name="total_ton" required="1"/>
+				<field name="light_ton" modifiers="{}"/>
+				<field name="droop_space" modifiers="{}"/>
+				<field name="deep" required="1"/>
+				<field name="cabin_hold" required="1"/>
+				<field name="hatch_size" modifiers="{}"/>
+				<field name="deck_bear" modifiers="{}"/>
+				<field name="crane" modifiers="{}"/>
+				<field name="tension" modifiers="{}"/>
+				<field name="hatch_fresh_water" modifiers="{}"/>
+				<field name="thruster" modifiers="{}"/>
+				<field name="oil_kind" modifiers="{}"/>
+				<field name="sail_district" modifiers="{}"/>
+				<field name="wujian" modifiers="{}"/>
+        </group>
+		</group>
+</sheet>
+</form>
+
+
+
+
+
+ship.require.form：
+<?xml version="1.0"?><form string="Views" version="7.0">
+<sheet>
+        <group>
+				<field name="ship_id" readonly="1"/>
+	</group>
+        <group>
+                      <group>
+				<field name="ship_kind" required="1"/>
+				<field name="sale_kind" required="1" string="求购性质"/>
+				<field name="customer" required="1" groups="base.group_sale_manager"/>
+				<field name="ship_contact" required="1" groups="base.group_sale_manager"/>
+                      </group>
+                      <group>
+				<field name="cus_kind"/>
+				<field name="info_from" required="1"/>
+				<field name="query_ppl"/>
+                      </group>
+	</group>
+
+         <group>
+				<field name="long" required="1"/>
+				<field name="wide" required="1"/>
+				<field name="deep" required="1" string="船高"/>
+				<field name="absorb" required="1"/>
+          </group>
+
+        <group>
+                      <group>
+				<field name="build_date" required="1"/>
+                      </group>
+                      <group>
+				<field name="build_date2" required="1" string="至"/>
+                      </group>
+	</group>
+ 
+	<group>
+				<field name="feature" required="1"/>
+				<field name="load_ton" required="1"/>
+				<field name="main_power" required="1"/>
+				<field name="cabin_hold" required="1"/>
+				<field name="hatch_size" required="1"/>
+				<field name="remark" string="跟踪备注"/>
+	   </group>
+
+        <group>
+                      <group>
+				<field name="staff" required="1" string="跟踪人" readonly="1"/>
+                      </group>
+                      <group>
+				<field name="publish_date" required="1" string="跟踪日期"/>
+                      </group>
+	</group>
+</sheet>
+</form>
+
+
+
+ship.require.manage.form：
+<?xml version="1.0"?><form string="Views" version="7.0">
+<sheet>
+        <group>
+				<field name="ship_id" readonly="1"/>
+	</group>
+        <group>
+                      <group>
+				<field name="ship_kind" required="1"/>
+				<field name="sale_kind" required="1" string="求购性质"/>
+				<field name="customer" required="1"/>
+				<field name="ship_contact" required="1"/>
+                      </group>
+                      <group>
+				<field name="cus_kind" />
+				<field name="info_from" required="1"/>
+				<field name="query_ppl" />
+                      </group>
+	</group>
+
+         <group>
+				<field name="long" required="1"/>
+				<field name="wide" required="1"/>
+				<field name="deep" required="1" string="船高"/>
+				<field name="absorb" required="1"/>
+          </group>
+
+        <group>
+                      <group>
+				<field name="build_date" required="1"/>
+                      </group>
+                      <group>
+				<field name="build_date2" required="1" string="至"/>
+                      </group>
+	</group>
+ 
+	<group>
+				<field name="feature" required="1"/>
+				<field name="load_ton" required="1"/>
+				<field name="main_power" required="1"/>
+				<field name="cabin_hold" required="1"/>
+				<field name="hatch_size" required="1"/>
+				<field name="remark" string="跟踪备注"/>
+	   </group>
+
+        <group>
+                      <group>
+				<field name="staff" required="1" string="跟踪人" readonly="1"/>
+                      </group>
+                      <group>
+				<field name="publish_date" required="1" string="跟踪日期"/>
+                      </group>
+	</group>
+</sheet>
+</form>

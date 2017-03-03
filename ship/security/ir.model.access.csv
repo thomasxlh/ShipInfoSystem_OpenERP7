@@ -1,0 +1,3 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_ship_info_olbs_ship_info","ship_info_olbs_ship_info","model_ship_info","base.group_user",1,1,1,1
+"access_ship_kind_olbs_ship_kind","ship_kind_olbs_ship_kind","model_ship_kind","base.group_user",1,1,1,1

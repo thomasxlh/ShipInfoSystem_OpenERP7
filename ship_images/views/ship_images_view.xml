@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="view_ship_image_form" model="ir.ui.view">
+            <field name="name">ship.images.form</field>
+            <field name="model">ship.images</field>
+            <field name="arch" type="xml">
+                <form string="船舶图片">
+                    <notebook colspan="4">
+                        <page string="图片">
+                            <group col="6" colspan="4">
+                                <field name="name" colspan="2" />
+                                <field name="extension" colspan="2" />
+                                <field name="link" colspan="2" />
+                            </group>
+                            <group attrs="{'invisible': [('link', '=', False)]}" colspan="4">
+                                <field name="url" colspan="4" widget="url"/>
+                            </group>
+                            <group>
+                                <field name="file" widget="image" nolabel="1" filename="name"
+                                    colspan="4" attrs="{'readonly': [('link', '=', True)]}"/>
+                            </group>
+                        </page>
+                        <page string="备注">
+                            <group>
+                                <field name="comments" nolabel="1" colspan="4" />
+                        </group>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_ship_image_tree" model="ir.ui.view">
+            <field name="name">ship.images.tree</field>
+            <field name="model">ship.images</field>
+            <field name="arch" type="xml">
+                <tree string="ship Images">
+                    <field name="name" select="1" />
+                    <field name="comments" select="2" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_ship_info_img_inh" model="ir.ui.view">
+            <field name="name">ship.info.images</field>
+            <field name="model">ship.info</field>
+            <field name="inherit_id" ref="Ship.ship_info_from_view" />
+            <field name="arch" type="xml">
+                <xpath expr="/form/sheet/group[5]" position="after">
+                    <field name="image_ids" />
+                </xpath>
+            </field>
+        </record>
+        <record id="view_ship_info_manage_img_inh" model="ir.ui.view">
+            <field name="name">ship.info.images</field>
+            <field name="model">ship.info</field>
+            <field name="inherit_id" ref="Ship.ship_info_manage_from_view" />
+            <field name="arch" type="xml">
+                <xpath expr="/form/sheet/group[5]" position="after">
+                    <field name="image_ids" />
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

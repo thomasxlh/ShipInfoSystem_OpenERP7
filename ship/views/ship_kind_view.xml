@@ -1,0 +1,632 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    	
+   <!--出售分类-->
+  		 <!--干散货船-->
+        <record model="ir.actions.act_window"  id="action_dry_bulk_carrier">
+            <field name="name">干散货船</field>
+            <field name="res_model">ship.info</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('ship_kind.parent_id','=', u'干散货船'),('sale_kind','=','sell')]</field>
+        </record>
+        <menuitem id="dry_bulk_carrier_menu" name="干散货船" parent="Ship.ship_sell_menu" action="action_dry_bulk_carrier" sequence="1" />
+        
+		  		 <!--散货船-->
+		        <record model="ir.actions.act_window"  id="action_bulk_carrier">
+		            <field name="name">散货船</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'散货船'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="bulk_carrier_menu" name="散货船" parent="dry_bulk_carrier_menu" action="action_bulk_carrier" sequence="1" />
+		  		 <!--杂货船-->
+		        <record model="ir.actions.act_window"  id="action_general_cargo_ship">
+		            <field name="name">杂货船</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'杂货船'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="general_cargo_ship_menu" name="杂货船" parent="dry_bulk_carrier_menu" action="action_general_cargo_ship" sequence="2" />
+		  		 <!--集装箱船-->
+		        <record model="ir.actions.act_window"  id="action_container_ship">
+		            <field name="name">集装箱船</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'集装箱船'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="container_ship_menu" name="集装箱船" parent="dry_bulk_carrier_menu" action="action_container_ship" sequence="3" />
+		  		 <!--多用途船-->
+		        <record model="ir.actions.act_window"  id="action_multipurpose_vessel">
+		            <field name="name">多用途船</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'多用途船'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="multipurpose_vessel_menu" name="多用途船" parent="dry_bulk_carrier_menu" action="action_multipurpose_vessel" sequence="4" />
+		  		 <!--冷藏船-->
+		        <record model="ir.actions.act_window"  id="action_refrigerator_ship">
+		            <field name="name">冷藏船</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'冷藏船'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="refrigerator_ship_menu" name="冷藏船" parent="dry_bulk_carrier_menu" action="action_refrigerator_ship" sequence="5" />
+		  		 <!--滚装船-->
+		        <record model="ir.actions.act_window"  id="action_ro-ro">
+		            <field name="name">滚装船</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'滚装船'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="ro-ro_menu" name="滚装船" parent="dry_bulk_carrier_menu" action="action_ro-ro" sequence="6" />
+		  		 <!--水泥运输船-->
+		        <record model="ir.actions.act_window"  id="action_cement_carrier">
+		            <field name="name">水泥运输船</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'水泥运输船'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="cement_carrier_menu" name="水泥运输船" parent="dry_bulk_carrier_menu" action="action_cement_carrier" sequence="7" />
+		  		 <!--运木船-->
+		        <record model="ir.actions.act_window"  id="action_timber_carrier">
+		            <field name="name">运木船</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'运木船'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="timber_carrier_menu" name="运木船" parent="dry_bulk_carrier_menu" action="action_timber_carrier" sequence="8" />
+		  		 <!--散装水泥船-->
+		        <record model="ir.actions.act_window"  id="action_bulk_cement_boat">
+		            <field name="name">散装水泥船</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'散装水泥船'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="bulk_cement_boat_menu" name="散装水泥船" parent="dry_bulk_carrier_menu" action="action_bulk_cement_boat" sequence="9" />
+
+		        
+		        
+  		 <!--液货船-->
+        <record model="ir.actions.act_window"  id="action_tankship">
+            <field name="name">液货船</field>
+            <field name="res_model">ship.info</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('ship_kind.parent_id','=', u'液货船'),('sale_kind','=','sell')]</field>
+        </record>
+        <menuitem id="tankship_menu" name="液货船" parent="Ship.ship_sell_menu" action="action_tankship" sequence="2" />
+		  		 <!--成品油船-->
+		        <record model="ir.actions.act_window"  id="action_product_tanker">
+		            <field name="name">成品油船</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'成品油船'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="product_tanker_menu" name="成品油船" parent="tankship_menu" action="action_product_tanker" sequence="1" />
+		  		 <!--原油船-->
+		        <record model="ir.actions.act_window"  id="action_crude_oil_tanker">
+		            <field name="name">原油船</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'原油船'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="crude_oil_tanker_menu" name="原油船" parent="tankship_menu" action="action_crude_oil_tanker" sequence="2" />
+		  		 <!--沥青船-->
+		        <record model="ir.actions.act_window"  id="action_asphalt_boat">
+		            <field name="name">沥青船</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'沥青船'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="asphalt_boat_menu" name="沥青船" parent="tankship_menu" action="action_asphalt_boat" sequence="3" />
+		  		 <!--化学品船-->
+		        <record model="ir.actions.act_window"  id="action_chemical_tanker">
+		            <field name="name">化学品船</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'化学品船'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="chemical_tanker_menu" name="化学品船" parent="tankship_menu" action="action_chemical_tanker" sequence="4" />
+		  		 <!--液化天然气船-->
+		        <record model="ir.actions.act_window"  id="action_LNG">
+		            <field name="name">液化天然气船</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'液化天然气船'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="LNG_menu" name="液化天然气船" parent="tankship_menu" action="action_LNG" sequence="5" />
+		  		 <!--液化石油气船-->
+		        <record model="ir.actions.act_window"  id="action_LPG_ship">
+		            <field name="name">液化石油气船</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'液化石油气船'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="LPG_ship_menu" name="液化石油气船" parent="tankship_menu" action="action_LPG_ship" sequence="6" />
+		  		 <!--溢油应急处置船-->
+		        <record model="ir.actions.act_window"  id="action_ship_oil_spill_emergency_response">
+		            <field name="name">溢油应急处置船</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'溢油应急处置船'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="ship_oil_spill_emergency_response_menu" name="溢油应急处置船" parent="tankship_menu" action="action_ship_oil_spill_emergency_response" sequence="7" />
+						<!--运水船-->
+		        <record model="ir.actions.act_window"  id="action_water_tanker">
+		            <field name="name">运水船</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'运水船'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="water_tanker_menu" name="运水船" parent="tankship_menu" action="action_water_tanker" sequence="8" />
+		  		 <!--加油船-->
+		        <record model="ir.actions.act_window"  id="action_refueling_ship">
+		            <field name="name">加油船</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'加油船'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="refueling_ship_menu" name="加油船" parent="tankship_menu" action="action_refueling_ship" sequence="9" />
+		  		 <!--油驳船-->
+		        <record model="ir.actions.act_window"  id="action_oil_barge">
+		            <field name="name">油驳船</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'油驳船'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="oil_barge_menu" name="油驳船" parent="tankship_menu" action="action_oil_barge" sequence="10" />
+		  		 <!--浮式储油船-->
+		        <record model="ir.actions.act_window"  id="action_floating_storage_vessel">
+		            <field name="name">浮式储油船</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'浮式储油船'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="floating_storage_vessel_menu" name="浮式储油船" parent="tankship_menu" action="action_floating_storage_vessel" sequence="11" />
+		  		 <!--轻油船-->
+		        <record model="ir.actions.act_window"  id="action_light_tankers">
+		            <field name="name">轻油船</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'轻油船'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="light_tankers_menu" name="轻油船" parent="tankship_menu" action="action_light_tankers" sequence="12" />
+        
+        
+  		 <!--拖轮-->
+        <record model="ir.actions.act_window"  id="action_tugboat">
+            <field name="name">拖轮</field>
+            <field name="res_model">ship.info</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('ship_kind.parent_id','=', u'拖轮'),('sale_kind','=','sell')]</field>
+        </record>
+        <menuitem id="tugboat_menu" name="拖轮" parent="Ship.ship_sell_menu" action="action_tugboat" sequence="3" />
+		  		 <!--港作拖轮(Z-P)-->
+		        <record model="ir.actions.act_window"  id="action_tugboat_ZP">
+		            <field name="name">港作拖轮(Z-P)</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'港作拖轮(Z-P)'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="tugboat_ZP_menu" name="港作拖轮(Z-P)" parent="tugboat_menu" action="action_tugboat_ZP" sequence="1" />
+		  		 <!--远洋拖轮(CPP)-->
+		        <record model="ir.actions.act_window"  id="action_ocean_Tug_CPP">
+		            <field name="name">远洋拖轮(CPP)</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'远洋拖轮(CPP)'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="ocean_Tug_CPP_menu" name="远洋拖轮(CPP)" parent="tugboat_menu" action="action_ocean_Tug_CPP" sequence="2" />
+		  		 <!--远洋拖轮(FPP)-->
+		        <record model="ir.actions.act_window"  id="action_ocean_tug_FPP">
+		            <field name="name">远洋拖轮(FPP)</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'远洋拖轮(FPP)'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="ocean_tug_FPP_menu" name="远洋拖轮(FPP)" parent="tugboat_menu" action="action_ocean_tug_FPP" sequence="3" />
+		  		 <!--三用拖轮-->
+		        <record model="ir.actions.act_window"  id="action_with_three_tugs">
+		            <field name="name">三用拖轮</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'三用拖轮'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="with_three_tugs_menu" name="三用拖轮" parent="tugboat_menu" action="action_with_three_tugs" sequence="4" />
+		  		 <!--推轮-->
+		        <record model="ir.actions.act_window"  id="action_push_tug">
+		            <field name="name">推轮</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'推轮'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="push_tug_menu" name="推轮" parent="tugboat_menu" action="action_push_tug" sequence="5" />
+		  		 <!--平台供应船-->
+		        <record model="ir.actions.act_window"  id="action_platform_supply_vessel">
+		            <field name="name">平台供应船</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'平台供应船'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="platform_supply_vessel_menu" name="平台供应船" parent="tugboat_menu" action="action_platform_supply_vessel" sequence="6" />
+        
+        
+        
+  		 <!--挖泥船-->
+        <record model="ir.actions.act_window"  id="action_dredger">
+            <field name="name">挖泥船</field>
+            <field name="res_model">ship.info</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('ship_kind.parent_id','=', u'挖泥船'),('sale_kind','=','sell')]</field>
+        </record>
+        <menuitem id="dredger_menu" name="挖泥船" parent="Ship.ship_sell_menu" action="action_dredger" sequence="4" />
+		  		 <!--抓斗式挖泥船-->
+		        <record model="ir.actions.act_window"  id="action_grab_dredger">
+		            <field name="name">抓斗式挖泥船</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'抓斗式挖泥船'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="grab_dredger_menu" name="抓斗式挖泥船" parent="dredger_menu" action="action_grab_dredger" sequence="1" />
+		  		 <!--绞吸式挖泥船-->
+		        <record model="ir.actions.act_window"  id="action_cutter_suction_dredger">
+		            <field name="name">绞吸式挖泥船</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'绞吸式挖泥船'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="cutter_suction_dredger_menu" name="绞吸式挖泥船" parent="dredger_menu" action="action_cutter_suction_dredger" sequence="2" />
+		  		 <!--耙吸式挖泥船-->
+		        <record model="ir.actions.act_window"  id="action_trailing_suction_hopper_dredger">
+		            <field name="name">耙吸式挖泥船</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'耙吸式挖泥船'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="trailing_suction_hopper_dredger_menu" name="耙吸式挖泥船" parent="dredger_menu" action="action_trailing_suction_hopper_dredger" sequence="3" />
+		  		 <!--链斗式挖泥船-->
+		        <record model="ir.actions.act_window"  id="action_chain_bucket_dredger">
+		            <field name="name">链斗式挖泥船</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'链斗式挖泥船'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="chain_bucket_dredger_menu" name="链斗式挖泥船" parent="dredger_menu" action="action_chain_bucket_dredger" sequence="4" />
+		  		 <!--铲斗式挖泥船-->
+		        <record model="ir.actions.act_window"  id="action_bucket_dredger">
+		            <field name="name">铲斗式挖泥船</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'铲斗式挖泥船'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="bucket_dredger_menu" name="铲斗式挖泥船" parent="dredger_menu" action="action_bucket_dredger" sequence="5" />
+        
+        
+                
+  		 <!--驳船-->
+        <record model="ir.actions.act_window"  id="action_barge">
+            <field name="name">驳船</field>
+            <field name="res_model">ship.info</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('ship_kind.parent_id','=', u'驳船'),('sale_kind','=','sell')]</field>
+        </record>
+        <menuitem id="barge_menu" name="驳船" parent="Ship.ship_sell_menu" action="action_barge" sequence="5" />
+		  		 <!--甲板驳-->
+		        <record model="ir.actions.act_window"  id="action_deck_barge">
+		            <field name="name">甲板驳</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'甲板驳'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="deck_barge_menu" name="甲板驳" parent="barge_menu" action="action_deck_barge" sequence="1" />
+		  		 <!--开体泥驳-->
+		        <record model="ir.actions.act_window"  id="action_split_hopper_barge">
+		            <field name="name">开体泥驳</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'开体泥驳'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="split_hopper_barge_menu" name="开体泥驳" parent="barge_menu" action="action_split_hopper_barge" sequence="2" />
+		  		 <!--开底泥驳-->
+		        <record model="ir.actions.act_window"  id="action_open_sediment_barge">
+		            <field name="name">开底泥驳</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'开底泥驳'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="open_sediment_barge_menu" name="开底泥驳" parent="barge_menu" action="action_open_sediment_barge" sequence="3" />
+		  		 <!--居住驳-->
+		        <record model="ir.actions.act_window"  id="action_living_barge">
+		            <field name="name">居住驳</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'居住驳'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="living_barge_menu" name="居住驳" parent="barge_menu" action="action_living_barge" sequence="4" />
+		  		 <!--登陆艇-->
+		        <record model="ir.actions.act_window"  id="action_landing_craft">
+		            <field name="name">登陆艇</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'登陆艇'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="landing_craft_menu" name="登陆艇" parent="barge_menu" action="action_landing_craft" sequence="5" />
+		  		 <!--吊机驳-->
+		        <record model="ir.actions.act_window"  id="action_crane_barge">
+		            <field name="name">吊机驳</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'吊机驳'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="crane_barge_menu" name="吊机驳" parent="barge_menu" action="action_crane_barge" sequence="6" />
+        
+        
+                
+  		 <!--浮式起重船-->
+        <record model="ir.actions.act_window"  id="action_floating_crane">
+            <field name="name">浮式起重船</field>
+            <field name="res_model">ship.info</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('ship_kind.parent_id','=', u'浮式起重船'),('sale_kind','=','sell')]</field>
+        </record>
+        <menuitem id="floating_crane_menu" name="浮式起重船" parent="Ship.ship_sell_menu" action="action_floating_crane" sequence="6" />
+		  		 <!--全回转-->
+		        <record model="ir.actions.act_window"  id="action_full_swing">
+		            <field name="name">全回转</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'全回转'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="full_swing_menu" name="全回转" parent="floating_crane_menu" action="action_full_swing" sequence="1" />
+		  		 <!--A字吊-->
+		        <record model="ir.actions.act_window"  id="action_A_shape_hanging">
+		            <field name="name">A字吊</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'A字吊'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="A_shape_hanging_menu" name="A字吊" parent="floating_crane_menu" action="action_A_shape_hanging" sequence="2" />
+		  		 <!--老鹰吊-->
+		        <record model="ir.actions.act_window"  id="action_eagle_hanging">
+		            <field name="name">老鹰吊</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'老鹰吊'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="eagle_hanging_menu" name="老鹰吊" parent="floating_crane_menu" action="action_eagle_hanging" sequence="3" />
+        
+        
+                
+  		 <!--海洋平台-->
+        <record model="ir.actions.act_window"  id="action_ocean_platform">
+            <field name="name">海洋平台</field>
+            <field name="res_model">ship.info</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('ship_kind.parent_id','=', u'海洋平台'),('sale_kind','=','sell')]</field>
+        </record>
+        <menuitem id="ocean_platform_menu" name="海洋平台" parent="Ship.ship_sell_menu" action="action_ocean_platform" sequence="7" />
+		  		 <!--自升式平台-->
+		        <record model="ir.actions.act_window"  id="action_self-elevating_platform">
+		            <field name="name">自升式平台</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'自升式平台'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="self-elevating_platform_menu" name="自升式平台" parent="ocean_platform_menu" action="action_self-elevating_platform" sequence="1" />
+		        
+		        
+		        
+  		 <!--客船-->
+        <record model="ir.actions.act_window"  id="action_passenger_ship">
+            <field name="name">客船</field>
+            <field name="res_model">ship.info</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('ship_kind.parent_id','=', u'客船'),('sale_kind','=','sell')]</field>
+        </record>
+        <menuitem id="passenger_ship_menu" name="客船" parent="Ship.ship_sell_menu" action="action_passenger_ship" sequence="8" />
+		  		 <!--旅客船-->
+		        <record model="ir.actions.act_window"  id="action_traveler_boat">
+		            <field name="name">旅客船</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'旅客船'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="traveler_boat_menu" name="旅客船" parent="passenger_ship_menu" action="action_traveler_boat" sequence="1" />
+		  		 <!--双体客船-->
+		        <record model="ir.actions.act_window"  id="action_catamaran_passenger_ship">
+		            <field name="name">双体客船</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'双体客船'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="catamaran_passenger_ship_menu" name="双体客船" parent="passenger_ship_menu" action="action_catamaran_passenger_ship" sequence="2" />
+		  		 <!--车客渡船-->
+		        <record model="ir.actions.act_window"  id="action_car_and_passenger_ferry">
+		            <field name="name">车客渡船</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'车客渡船'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="car_and_passenger_ferry_menu" name="车客渡船" parent="passenger_ship_menu" action="action_car_and_passenger_ferry" sequence="2" />
+		        
+		        
+        
+  		 <!--废钢船-->
+        <record model="ir.actions.act_window"  id="action_vessel_disposed_of_by_crapping">
+            <field name="name">废钢船</field>
+            <field name="res_model">ship.info</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('ship_kind.parent_id','=', u'废钢船'),('sale_kind','=','sell')]</field>
+        </record>
+        <menuitem id="vessel_disposed_of_by_crapping_menu" name="废钢船" parent="Ship.ship_sell_menu" action="action_vessel_disposed_of_by_crapping" sequence="9" />
+        
+  		 <!--游艇-->
+        <record model="ir.actions.act_window"  id="action_yacht">
+            <field name="name">游艇</field>
+            <field name="res_model">ship.info</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('ship_kind.parent_id','=', u'游艇'),('sale_kind','=','sell')]</field>
+        </record>
+        <menuitem id="yacht_menu" name="游艇" parent="Ship.ship_sell_menu" action="action_yacht" sequence="10" />
+        
+  		 <!--其他种类-->
+        <record model="ir.actions.act_window"  id="action_other_kind_ship">
+            <field name="name">客船</field>
+            <field name="res_model">ship.info</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('ship_kind.parent_id','=', u'其他种类'),('sale_kind','=','sell')]</field>
+        </record>
+        <menuitem id="other_kind_ship_menu" name="其他种类" parent="Ship.ship_sell_menu" action="action_other_kind_ship" sequence="11" />
+		  		 <!--渔船-->
+		        <record model="ir.actions.act_window"  id="action_fishing">
+		            <field name="name">渔船</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'渔船'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="fishing_menu" name="渔船" parent="other_kind_ship_menu" action="action_fishing" sequence="1" />
+		  		 <!--吸砂船-->
+		        <record model="ir.actions.act_window"  id="action_sand_suction_boat">
+		            <field name="name">吸砂船</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'吸砂船'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="sand_suction_boat_menu" name="吸砂船" parent="other_kind_ship_menu" action="action_sand_suction_boat" sequence="2" />
+		  		 <!--打捞船-->
+		        <record model="ir.actions.act_window"  id="action_fishing_boat">
+		            <field name="name">打捞船</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'打捞船'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="fishing_boat_menu" name="打捞船" parent="other_kind_ship_menu" action="action_fishing_boat" sequence="3" />
+		  		 <!--水上餐厅-->
+		        <record model="ir.actions.act_window"  id="action_floating_restaurant">
+		            <field name="name">水上餐厅</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'水上餐厅'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="floating_restaurant_menu" name="水上餐厅" parent="other_kind_ship_menu" action="action_floating_restaurant" sequence="4" />
+		  		 <!--起锚艇/抛锚艇-->
+		        <record model="ir.actions.act_window"  id="action_anchor_boat">
+		            <field name="name">起锚艇/抛锚艇</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'起锚艇/抛锚艇'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="anchor_boat_menu" name="起锚艇/抛锚艇" parent="other_kind_ship_menu" action="action_anchor_boat" sequence="5" />
+		  		 <!--交通船-->
+		        <record model="ir.actions.act_window"  id="action_boat_transport">
+		            <field name="name">交通船</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'交通船'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="boat_transport_menu" name="交通船" parent="other_kind_ship_menu" action="action_boat_transport" sequence="6" />
+		  		 <!--邮轮-->
+		        <record model="ir.actions.act_window"  id="action_advertise_boat">
+		            <field name="name">邮轮</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'邮轮'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="advertise_boat_menu" name="邮轮" parent="other_kind_ship_menu" action="action_advertise_boat" sequence="7" />
+		  		 <!--浮船坞-->
+		        <record model="ir.actions.act_window"  id="action_floating_dock">
+		            <field name="name">浮船坞</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'浮船坞'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="floating_dock_menu" name="浮船坞" parent="other_kind_ship_menu" action="action_floating_dock" sequence="8" />
+		  		 <!--测量船-->
+		        <record model="ir.actions.act_window"  id="action_tracking_ship">
+		            <field name="name">测量船</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'测量船'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="tracking_ship_menu" name="测量船" parent="other_kind_ship_menu" action="action_tracking_ship" sequence="9" />
+		  		 <!--打夯船-->
+		        <record model="ir.actions.act_window"  id="action_boat_ramming">
+		            <field name="name">打夯船</field>
+				            <field name="res_model">ship.info</field>
+				            <field name="view_type">form</field>
+				            <field name="view_mode">tree,form</field>
+		            <field name="domain">[('ship_kind','=', u'打夯船'),('sale_kind','=','sell')]</field>
+		        </record>
+		        <menuitem id="boat_ramming_menu" name="打夯船" parent="other_kind_ship_menu" action="action_boat_ramming" sequence="10" />
+        
+        
+    </data>
+</openerp>
+
+
+									
